@@ -18,7 +18,7 @@
             </a>
 
             <!-- Mobile Menu Toggle -->
-            <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors relative z-[110]" aria-label="Toggle Menu">
+            <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-700 hover:text-blue-600 transition-colors relative z-[1000]" aria-label="Toggle Menu">
                 <i data-lucide="menu" class="w-8 h-8 menu-icon"></i>
                 <i data-lucide="x" class="w-8 h-8 close-icon hidden"></i>
             </button>
@@ -26,13 +26,13 @@
     </div>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[100] translate-x-full transition-transform duration-500 md:hidden flex items-center justify-center text-center">
-        <div class="flex flex-col gap-8 w-full px-10">
-            <a href="index.html#" class="mobile-nav-link text-4xl font-bold text-slate-900 hover:text-blue-600 transition-colors">Home</a>
-            <a href="about.html" class="mobile-nav-link text-4xl font-bold text-slate-900 hover:text-blue-600 transition-colors">About Us</a>
-            <a href="resources.html" class="mobile-nav-link text-4xl font-bold text-slate-900 hover:text-blue-600 transition-colors">Resources</a>
-            <div class="pt-8">
-                <a href="index.html#apply" class="mobile-nav-link bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl shadow-blue-600/30 inline-block w-full">
+    <div id="mobile-menu" class="fixed top-0 left-0 w-screen h-screen bg-white z-[999] translate-x-full transition-transform duration-500 md:hidden flex flex-col items-center justify-center text-center">
+        <div class="flex flex-col gap-10 w-full px-10">
+            <a href="index.html#" class="mobile-nav-link text-4xl font-extrabold text-slate-900">Home</a>
+            <a href="about.html" class="mobile-nav-link text-4xl font-extrabold text-slate-900">About Us</a>
+            <a href="resources.html" class="mobile-nav-link text-4xl font-extrabold text-slate-900">Resources</a>
+            <div class="pt-10">
+                <a href="index.html#apply" class="mobile-nav-link bg-blue-900 text-white px-10 py-5 rounded-2xl font-bold text-2xl shadow-2xl inline-block w-full">
                     Join Us
                 </a>
             </div>
