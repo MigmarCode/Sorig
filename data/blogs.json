@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "The Future of Nursing in Canada: Trends for 2026",
+        "category": "News",
+        "date": "May 10, 2026",
+        "excerpt": "Discover how technology and new healthcare policies are shaping the career landscape for international nurses.",
+        "image": "./img/blog/trends-2026.jpg",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "title": "5 Essential Tips for Relocating as a Healthcare Professional",
+        "category": "Blogs",
+        "date": "May 05, 2026",
+        "excerpt": "Relocating can be daunting. Our comprehensive guide helps you navigate the transition with ease and confidence.",
+        "image": "./img/blog/relocation-tips.jpg",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "title": "Why Specialized Nursing is the Key to Better Patient Care",
+        "category": "Blogs",
+        "date": "April 28, 2026",
+        "excerpt": "Exploring the impact of specialized training on clinical outcomes and long-term career satisfaction.",
+        "image": "./img/blog/specialized-nursing.jpg",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "title": "Why Specialized Nursing is the Key to Better Patient Care",
+        "category": "News",
+        "date": "April 28, 2026",
+        "excerpt": "Exploring the impact of specialized training on clinical outcomes and long-term career satisfaction.",
+        "image": "./img/blog/specialized-nursing.jpg",
+        "link": "#"
+    }
+]

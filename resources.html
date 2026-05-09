@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | Sorig </title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-nunito">
+    <!-- Navigation Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Layout Spacer (Matches Navbar Height) -->
+    <div style="height: 100px;"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative h-[50vh] min-h-[500px] flex items-center px-6 overflow-hidden">
+            <!-- Background Layer -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-blue-950/70 z-10 backdrop-blur-sm"></div>
+                <img src="./img/resources/hero-bg.png" alt="Resources Hero"
+                    class="absolute inset-0 w-full h-full object-cover object-center">
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full relative z-20">
+                <div class="max-w-3xl">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-400/20 text-blue-200 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-8 border border-white/10 backdrop-blur-md">
+                        Resources
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold font-roboto text-white leading-[1.1] mb-8 drop-shadow-lg">
+                        General Overview
+                    </h1>
+                    <p class="text-xl text-slate-100 mb-0 leading-relaxed drop-shadow-md max-w-xl">
+                        At Sorig, nurses are self employed contractors, this means you operate independently, and issue
+                        invoices to our company.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- General Text Section -->
+        <section class="py-24 px-6 bg-white">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <h2 class="text-4xl font-bold font-roboto text-blue-950 mb-8 leading-tight">
+                            Empowering Your <br>
+                            <span class="text-blue-600">Journey</span>
+                        </h2>
+                        <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                            <p>
+                                As a travel nurse, managing your taxes can be complex due to the unique nature of your
+                                employment, frequent relocations, and associated expenses. Understanding tax deductions
+                                and benefits specific to your profession can help you save money and stay compliant with
+                                Canada Revenue Agency (CRA) regulations.
+                            </p>
+                            <p>
+                                At Sorig, nurses are self employed contractors, this means you operate independently,
+                                and issue invoices to our company. Most independent contractors open their own
+                                corporations. For further information on this please speak to an accountant.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Right: Image Card -->
+                    <div class="relative">
+                        <div
+                            class="absolute -bottom-12 -right-12 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60">
+                        </div>
+                        <div
+                            class="relative z-10 rounded-[3rem] overflow-hidden border-[12px] border-slate-50 shadow-2xl shadow-blue-900/10 transform rotate-2 hover:rotate-0 transition-all duration-700">
+                            <img src="./img/nurses/about-2.jpg" alt="Support Team"
+                                class="w-full h-[600px] object-cover scale-110 hover:scale-100 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/40 to-transparent"></div>
+                            <div class="absolute bottom-10 left-10 right-10">
+                                <div
+                                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50">
+                                    <p class="text-blue-900 font-bold text-lg mb-1">Still have questions?</p>
+                                    <p class="text-slate-500 text-sm mb-4">Our dedicated support team is available 24/7
+                                        to help you navigate your next career move.</p>
+                                    <a href="#apply"
+                                        class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all">
+                                        Contact Support <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion Section -->
+        <section class="py-24 px-6 bg-slate-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <div
+                        class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-blue-100">
+                        Resources
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold font-roboto text-blue-950 mb-6 text-center">
+                        General Questions
+                    </h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-center">
+                        Quickly find answers to the most common questions.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <!-- Resource Item 1 -->
+                    <div
+                        class="faq-item group bg-white rounded-2xl transition-all duration-300 border border-slate-200 hover:border-blue-200 shadow-sm">
+                        <button class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                            <div class="flex items-center gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                                </div>
+                                <span
+                                    class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                                    Licensing and credentialing guides
+                                </span>
+                            </div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-7 pb-7 ml-12">
+
+                            <div class="mb-6">
+                                <h4 class="text-blue-950 font-bold mb-3">Required Documents:</h4>
+                                <ul class="space-y-2 text-slate-600 mb-4">
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Updated Resume</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Government-issued Picture ID</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Current Nursing License(s)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Vulnerable Sector Check (Most recent)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- TB Test Results (Latest available)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Full Immunization & Covid-19 Records</span>
+                                    </li>
+                                </ul>
+
+                                <h4 class="text-blue-950 font-bold mb-3">Any Relevant Certifications:</h4>
+                                <ul class="space-y-2 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- Mask Fit</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- BLS (Basic Life Support)</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span>- CPR (Cardiopulmonary Resuscitation)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resource Item 2 -->
+                    <div
+                        class="faq-item group bg-white rounded-2xl transition-all duration-300 border border-slate-200 hover:border-blue-200 shadow-sm">
+                        <button class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                            <div class="flex items-center gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                    <i data-lucide="calculator" class="w-5 h-5"></i>
+                                </div>
+                                <span
+                                    class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                                    Tax Tips for Travel Nurses in Canada
+                                </span>
+                            </div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-7 pb-7 ml-12">
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Common Tax Deductions for Travel Nurses: Travel nurses may qualify for various
+                                deductions to reduce taxable income. These deductions depend on your employment
+                                status:
+                            </p>
+                            <div class="mb-6">
+                                <h4 class="text-blue-950 font-bold mb-3">For Self-Employed Nurses</h4>
+                                <ul class="space-y-2 text-slate-600">
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span><strong>Home Office Expenses:</strong> If you work from home for
+                                            administrative purposes, you can claim a portion of your rent,
+                                            utilities, and internet.</span>
+                                    </li><br>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span><strong>Vehicle Expenses:</strong> Mileage, gas, maintenance, and
+                                            insurance used for work-related travel.</span>
+                                    </li><br>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span><strong>Insurance Premiums:</strong> Professional liability insurance
+                                            can be deductible.
+                                        </span>
+                                    </li><br>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span><strong>Other Business Costs:</strong> Advertising, accounting fees,
+                                            and legal expenses.</span>
+                                    </li><br>
+                                    <li class="flex items-start gap-2">
+                                        <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                        <span><strong>Consider a Tax Professional:</strong>Due to the complexities
+                                            of travel nurse taxes, consulting a tax professional with expertise in
+                                            healthcare or mobile workers is highly recommended.</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Resource Item 3 -->
+                    <div
+                        class="faq-item group bg-white rounded-2xl transition-all duration-300 border border-slate-200 hover:border-blue-200 shadow-sm">
+                        <button class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                            <div class="flex items-center gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                    <i data-lucide="wrench" class="w-5 h-5"></i>
+                                </div>
+                                <span
+                                    class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                                    Helpful Tools and Resources
+                                </span>
+                            </div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-7 pb-7 ml-12">
+                            <ul class="space-y-2 text-slate-600">
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                    <span text-lg><strong>CRA Forms:</strong> <a
+                                            href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t2200.html"
+                                            target="_blank"
+                                            class="text-blue-600 font-bold text-base inline-flex items-center gap-2 hover:gap-3 transition-all">
+                                            Form T2200</a>, <a
+                                            href="https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t777.html"
+                                            target="_blank"
+                                            class="text-blue-600 font-bold text-base inline-flex items-center gap-2 hover:gap-3 transition-all">
+                                            Form T777</a></span>
+                                </li><br>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                    <span text-lg><strong>Mileage Tracker Apps:</strong> <a href="https://mileiq.com"
+                                            target="_blank"
+                                            class="text-blue-600 font-bold text-base inline-flex items-center gap-2 hover:gap-3 transition-all">
+                                            MileIQ</a>, <a href="https://www.triplog.net" target="_blank"
+                                            class="text-blue-600 font-bold text-base inline-flex items-center gap-2 hover:gap-3 transition-all">
+                                            TripLog</a></span>
+                                </li><br>
+                                <li class="flex items-start gap-2">
+                                    <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0"></span>
+                                    <span text-lg><strong>CRA Guides:</strong> Employment expenses guide (<a
+                                            href="https://www.canada.ca/en/revenue-agency/services/forms-publications/publications/t4044.html"
+                                            target="_blank"
+                                            class="text-blue-600 font-bold text-base inline-flex items-center gap-2 hover:gap-3 transition-all">
+                                            Form T4044</a>)
+                                    </span>
+                                </li><br>
+
+                        </div>
+                    </div>
+
+                    <!-- Resource Item 4 -->
+                    <div
+                        class="faq-item group bg-white rounded-2xl transition-all duration-300 border border-slate-200 hover:border-blue-200 shadow-sm">
+                        <button class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                            <div class="flex items-center gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                    <i data-lucide="luggage" class="w-5 h-5"></i>
+                                </div>
+                                <span
+                                    class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                                    Packing checklists (Travel Nurse Packing Checklist)
+                                </span>
+                            </div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                <i data-lucide="chevron-down"
+                                    class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden px-7 pb-7">
+                            <div class="flex flex-col md:flex-row gap-8 bg-white rounded-2xl p-2 min-h-[400px]">
+                                <!-- Sidebar Tabs -->
+                                <div
+                                    class="w-full md:w-64 flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible gap-2 p-2 bg-slate-50 rounded-xl">
+                                    <button data-tab-target="docs"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-blue-600 bg-blue-50 active">
+                                        <i data-lucide="file-check" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Essential Documents</span>
+                                    </button>
+                                    <button data-tab-target="tech"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-slate-500 hover:text-blue-600 hover:bg-blue-50">
+                                        <i data-lucide="laptop" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Technology</span>
+                                    </button>
+                                    <button data-tab-target="clothing"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-slate-500 hover:text-blue-600 hover:bg-blue-50">
+                                        <i data-lucide="shirt" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Clothing</span>
+                                    </button>
+                                    <button data-tab-target="household"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-slate-500 hover:text-blue-600 hover:bg-blue-50">
+                                        <i data-lucide="home" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Household & Comfort</span>
+                                    </button>
+                                    <button data-tab-target="medical"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-slate-500 hover:text-blue-600 hover:bg-blue-50">
+                                        <i data-lucide="stethoscope" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Medical & Work</span>
+                                    </button>
+                                    <button data-tab-target="wellness"
+                                        class="tab-trigger flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-bold transition-all duration-300 text-slate-500 hover:text-blue-600 hover:bg-blue-50">
+                                        <i data-lucide="heart" class="w-4 h-4"></i>
+                                        <span class="whitespace-nowrap">Health & Wellness</span>
+                                    </button>
+                                </div>
+
+                                <!-- Content Area -->
+                                <div class="flex-1 p-4 md:p-6">
+                                    <!-- Essential Documents -->
+                                    <div id="docs" class="tab-panel space-y-4">
+
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Nursing license(s) (physical and/or digital copies)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Certifications (BLS, ACLS, PALS, etc.)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Photo ID (driver’s license/passport)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Work contract and assignment details
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Health records (immunizations, TB test, COVID-19 vaccine card, etc.)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Insurance information (health, malpractice, auto)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Emergency contact list
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Digital copies of important documents (stored on a secure cloud platform
+                                                or USB)
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Technology -->
+                                    <div id="tech" class="tab-panel hidden space-y-4">
+
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Phone and charger
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Laptop/tablet and charger
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Power strip or surge protector
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Portable Wi-Fi device or hotspot
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Backup battery pack
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Camera (optional for documenting travel memories)
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Clothing -->
+                                    <div id="clothing" class="tab-panel hidden space-y-4">
+
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Scrubs (enough for a week)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Casual clothes for downtime
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Professional outfit (for meetings/orientation)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Jacket/coat (appropriate for the destination’s climate)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Comfortable lounge/workout clothes
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Sleepwear
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Swimwear (if applicable)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Hats/gloves/scarves (if going to a cold climate)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Compression socks and regular socks
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Comfortable shoes (work and casual)
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Household & Comfort -->
+                                    <div id="household" class="tab-panel hidden space-y-4">
+
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Bedding (sheets, pillow, blanket if housing is furnished)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Folding chair or small desk setup (if housing lacks workspace)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Portable utensils and cookware (if housing is unfurnished)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Travel mug and water bottle
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Small personal décor items (candles, photos)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Toiletries (soap, shampoo, deodorant, etc.)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Cleaning supplies (wipes, laundry detergent)
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Medical & Work -->
+                                    <div id="medical" class="tab-panel hidden space-y-4">
+
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Watch with a second hand (or digital with a stopwatch)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Pens/highlighters/notebook
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Pocket-sized medical reference guide
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Any necessary medications (prescription and OTC)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Earplugs/headphones for noisy shifts
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Medical scissors
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Measuring tape
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Stethoscope and case
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Badge reel and holder
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Health & Wellness -->
+                                    <div id="wellness" class="tab-panel hidden space-y-4">
+                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Credit/debit cards and some cash
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Durable luggage and travel bags
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Local maps or travel guide
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Pet supplies (if traveling with pets)
+                                            </li>
+                                            <li class="flex items-start gap-3 text-slate-600 text-sm">
+                                                <div class="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0">
+                                                </div>
+                                                Travel first aid kit
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Footer Action Area -->
+                            <div class="mt-12 pt-8 border-t border-slate-100">
+                                <div class="flex flex-col md:flex-row items-center justify-between gap-6 bg-blue-50/50 rounded-3xl p-6 md:p-8">
+                                    <div class="flex items-center gap-4 text-center md:text-left">
+                                        <div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-blue-600 shadow-sm flex-shrink-0 hidden md:flex">
+                                            <i data-lucide="info" class="w-6 h-6"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-blue-950 font-bold mb-1">Tailor Your Checklist</p>
+                                            <p class="text-slate-500 text-sm max-w-md leading-relaxed">
+                                                Depending on the assignment location, duration, and housing arrangements, this list can be tailored to your specific needs.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <a href="./img/pdf/Packing-checklists.pdf" download
+                                            class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-base hover:bg-blue-700 transition-all transform hover:-translate-y-1 shadow-xl shadow-blue-600/25 group">
+                                            <span>Download PDF</span>
+                                            <i data-lucide="download" class="w-5 h-5 transition-transform group-hover:translate-y-0.5"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resource Item 5 -->
+                        <div
+                            class="faq-item group bg-white rounded-2xl transition-all duration-300 border border-slate-200 hover:border-blue-200 shadow-sm">
+                            <button
+                                class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                                <div class="flex items-center gap-5">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+                                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                                    </div>
+                                    <span
+                                        class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">
+                                        Continuing education opportunities
+                                    </span>
+                                </div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                    <i data-lucide="chevron-down"
+                                        class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                                </div>
+                            </button>
+                            <div class="faq-content hidden px-7 pb-7 ml-12">
+                                <div class="pl-12 border-l-2 border-blue-100">
+                                    <p class="text-slate-600 leading-relaxed mb-4">
+                                        Still in Progress...
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js?v=1.2"></script>
+</body>
+
+</html>

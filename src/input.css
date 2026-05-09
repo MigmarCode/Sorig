@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+    /* 
+     CLEAN SLATE: 
+     We reset the default color palette to only use Sorig brand colors.
+  */
+    --color-*: initial;
+
+    /* Brand Colors */
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-red: #981616;
+
+    /* Brand Blue Palette (based on #134578) */
+    --color-blue-50: #f0f4f8;
+    --color-blue-100: #dce6ef;
+    --color-blue-200: #bbd0e2;
+    --color-blue-300: #8baecd;
+    --color-blue-400: #5585b4;
+    --color-blue-500: #386796;
+    --color-blue-600: #134578;
+    --color-blue-700: #20456b;
+    --color-blue-800: #1d3a5a;
+    --color-blue-900: #1b324d;
+    --color-blue-950: #0a233d;
+
+    /* Essential UI Neutrals (using a cool slate to match the blue) */
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+    --color-slate-950: #020617;
+
+    /* Brand Typography */
+    --font-nunito: "Nunito Sans", sans-serif;
+    --font-roboto: "Roboto Serif", serif;
+}
+
+@source "../index.html";
+@source "../resources.html";
+@source "../about.html";
+@source "../components/**/*.html";
+@source "../js/**/*.js";
+
+/* Swiper Custom Styles */
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #cbd5e1;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    width: 32px;
+    border-radius: 10px;
+    background: #134578;
+}
+
+.news-slider {
+    padding-bottom: 60px !important;
+}
+
+.swiper-slide {
+    height: auto !important;
+}

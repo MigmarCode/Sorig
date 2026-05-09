@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorig | Premium Healthcare Recruitment</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Roboto+Serif:opsz,wght@8..144,400;8..144,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 font-nunito">
+    <!-- Navigation Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Layout Spacer (Matches Navbar Height) -->
+    <div style="height: 100px;"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <!-- Full-Background Cinematic Slider Section -->
+        <section class="relative h-[85vh] min-h-[700px] flex items-center px-6 overflow-hidden">
+            <!-- Background Slider Layer -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-blue-950/70 z-10"></div> <!-- Consistent Dark Overlay -->
+                <img src="./img/nurses/slider-1.jpg" alt="Background 1"
+                    class="hero-slide absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 opacity-100">
+                <img src="./img/nurses/slider-2.jpg" alt="Background 2"
+                    class="hero-slide absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 opacity-0">
+                <img src="./img/nurses/slider-3.jpg" alt="Background 3"
+                    class="hero-slide absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 opacity-0">
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full relative z-20">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-6xl font-bold font-roboto text-white leading-[1.1] mb-8 drop-shadow-lg">
+                        Elevating the <br><span class="text-blue-400">Nursing Experience</span> across Provinces
+                    </h1>
+                    <p class="text-xl md:text-xl text-slate-100 mb-12 leading-relaxed drop-shadow-md">
+                        Connecting compassionate healthcare professionals with fulfilling opportunities through
+                        personalized
+                        career guidance and premium resources.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6">
+                        <a href="#apply"
+                            class="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-blue-500 transition-all transform hover:-translate-y-1 shadow-2xl shadow-blue-600/40">
+                            Hire Talents
+                        </a>
+                        <a href="#about"
+                            class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-white/20 transition">
+                            Find Job
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-32 px-6 bg-white overflow-hidden relative">
+            <!-- Subtle Background Accent -->
+            <div
+                class="absolute -left-20 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[100px] pointer-events-none">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 lg:gap-32 items-center">
+                    <!-- Left: Premium Image Card -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full z-0 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div
+                            class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-900/10 border-8 border-slate-50 transform group-hover:-translate-y-2 transition-all duration-700">
+                            <img src="./img/nurses/nurse-portrait-hospital_23-2150780404.jpg.webp"
+                                alt="Healthcare Professionals"
+                                class="w-full h-[550px] object-cover group-hover:scale-105 transition duration-1000">
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 w-48 h-48 bg-slate-100 rounded-3xl -z-10 group-hover:rotate-6 transition-transform duration-700">
+                        </div>
+
+                        <!-- Floating Badge -->
+                        <div
+                            class="absolute top-1/2 -right-8 lg:-right-12 bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50 z-20 hidden lg:block animate-bounce-slow">
+                            <div class="text-3xl font-bold text-blue-900 leading-none">15+</div>
+                            <div class="text-[10px] font-black uppercase tracking-widest text-slate-500 mt-1">Years
+                                Expert
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: High-End Typography Block -->
+                    <div class="flex flex-col items-start">
+                        <div
+                            class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-10 border border-blue-100">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+                            About Us
+                        </div>
+
+                        <h2 class="text-5xl lg:text-6xl font-bold font-roboto text-blue-950 mb-10 leading-[1.15]">
+                            The Most Loved <br>
+                            <span
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Agency</span>
+                        </h2>
+
+                        <p class="text-xl text-slate-500 leading-relaxed mb-12 font-light">
+                            Our mission is to empower and support travel nurses by connecting them with fulfilling
+                            opportunities across various provinces. We are committed to providing personalized career
+                            guidance, reliable resources, and exceptional service to help nurses thrive both
+                            professionally
+                            and personally. By fostering meaningful relationships and prioritizing excellence, we aim to
+                            elevate the travel nursing experience and contribute to the healthcare community with
+                            skilled
+                            and compassionate professionals. With experienced travel nurses we aim to fill the nursing
+                            shortage gaps in hospitals.
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us" class="py-24 px-6 bg-slate-50">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold font-roboto text-blue-950 mb-4 text-center">Why Choose Sorig?</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto text-center">Connecting compassion with excellence
+                        through
+                        our professional nursing network.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 hover:scale-105 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-950 mb-3">Retain Top Talent</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Providing clear career paths and growth
+                            opportunities is key to retaining top talent.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 hover:scale-105 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            <i data-lucide="shield-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-950 mb-3">Stay Compliant</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Educate employees about compliance
+                            requirements
+                            through regular training</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 hover:scale-105 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            <i data-lucide="trending-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-950 mb-3">Improve Employee</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Invest in employee training and development
+                            programs to enhance skills.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-white p-8 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 hover:scale-105 transition duration-300">
+                        <div
+                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-3xl mb-6">
+                            <i data-lucide="heart-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-950 mb-3">Great Support</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">We invest in the best to support your
+                            productivity
+                            and success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-32 px-6 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+
+                    <!-- Left: FAQ Accordion -->
+                    <div class="flex flex-col">
+                        <div
+                            class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-8 border border-blue-100 w-fit">
+                            FAQ
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold font-roboto text-blue-950 mb-12 leading-tight">
+                            Frequently Asked <br>
+                            <span class="text-blue-600">Questions</span>
+                        </h2>
+
+                        <div class="space-y-4">
+                            <!-- FAQ Item 1 -->
+                            <div
+                                class="faq-item group bg-slate-50 rounded-2xl transition-all duration-300 border border-transparent hover:border-blue-100">
+                                <button
+                                    class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                                    <span
+                                        class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">How
+                                        Can I Prepare for an Interview?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-content hidden px-7 pb-7">
+                                    <p class="text-slate-500 leading-relaxed">
+                                        To prepare for an interview, research the company, understand the job role and
+                                        responsibilities, and prepare questions to ask the interviewer.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div
+                                class="faq-item group bg-slate-50 rounded-2xl transition-all duration-300 border border-transparent hover:border-blue-100">
+                                <button
+                                    class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                                    <span
+                                        class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">Hiring
+                                        Managers and Candidates?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-content hidden px-7 pb-7">
+                                    <p class="text-slate-500 leading-relaxed">
+                                        To prepare for an interview, research the company, understand the job role and
+                                        responsibilities, and prepare questions to ask the interviewer.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div
+                                class="faq-item group bg-slate-50 rounded-2xl transition-all duration-300 border border-transparent hover:border-blue-100">
+                                <button
+                                    class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                                    <span
+                                        class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">Clarifying
+                                        Recruitment Concepts?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-content hidden px-7 pb-7">
+                                    <p class="text-slate-500 leading-relaxed">
+                                        To prepare for an interview, research the company, understand the job role and
+                                        responsibilities, and prepare questions to ask the interviewer.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div
+                                class="faq-item group bg-slate-50 rounded-2xl transition-all duration-300 border border-transparent hover:border-blue-100">
+                                <button
+                                    class="faq-trigger w-full flex items-center justify-between p-7 text-left outline-none">
+                                    <span
+                                        class="text-lg font-bold text-blue-950 group-hover:text-blue-600 transition-colors">Employers
+                                        look for in candidates?</span>
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-blue-600 transition-colors">
+                                        <i data-lucide="chevron-down"
+                                            class="w-4 h-4 text-blue-600 group-hover:text-white transition-all duration-300"></i>
+                                    </div>
+                                </button>
+                                <div class="faq-content hidden px-7 pb-7">
+                                    <p class="text-slate-500 leading-relaxed">
+                                        To prepare for an interview, research the company, understand the job role and
+                                        responsibilities, and prepare questions to ask the interviewer.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image Card -->
+                    <div class="relative">
+                        <div
+                            class="absolute -bottom-12 -right-12 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60">
+                        </div>
+                        <div
+                            class="relative z-10 rounded-[3rem] overflow-hidden border-[12px] border-slate-50 shadow-2xl shadow-blue-900/10 transform rotate-2 hover:rotate-0 transition-all duration-700">
+                            <img src="./img/nurses/about-2.jpg" alt="Support Team"
+                                class="w-full h-[600px] object-cover scale-110 hover:scale-100 transition duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/40 to-transparent"></div>
+                            <div class="absolute bottom-10 left-10 right-10">
+                                <div
+                                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/50">
+                                    <p class="text-blue-900 font-bold text-lg mb-1">Still have questions?</p>
+                                    <p class="text-slate-500 text-sm mb-4">Our dedicated support team is available 24/7
+                                        to help you navigate your next career move.</p>
+                                    <a href="#apply"
+                                        class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all">
+                                        Contact Support <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-32 px-6 bg-slate-900 overflow-hidden relative">
+            <!-- Abstract Background Shapes -->
+            <div
+                class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -mr-64 -mt-64">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-400/10 rounded-full blur-[120px] -ml-64 -mb-64">
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold font-roboto text-white mb-6">From Our Community</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Testimonial 1 -->
+                    <div
+                        class="bg-white/5 backdrop-blur-xl p-10 rounded-[2.5rem] border border-white/10 relative group">
+                        <div class="text-blue-400 mb-8 text-5xl font-serif">“</div>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-10 italic">
+                            "Sorig found me a placement that perfectly matched my clinical interests and lifestyle. The
+                            support throughout the transition was exceptional."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-400/30 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=200"
+                                    alt="Nurse Sarah" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Sarah Jenkins</h4>
+                                <p class="text-blue-400 text-xs font-black uppercase tracking-widest">ICU Specialist</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div
+                        class="bg-white/10 backdrop-blur-xl p-10 rounded-[2.5rem] border border-white/20 relative group scale-105 shadow-2xl shadow-blue-500/10">
+                        <div class="text-blue-400 mb-8 text-5xl font-serif">“</div>
+                        <p class="text-white text-lg leading-relaxed mb-10 italic">
+                            "The most professional agency I've worked with. They truly understand the unique challenges
+                            of
+                            travel nursing and provide constant advocacy."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-400/30 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=200"
+                                    alt="Nurse Michael" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Michael Chen</h4>
+                                <p class="text-blue-400 text-xs font-black uppercase tracking-widest">ER Registered
+                                    Nurse
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div
+                        class="bg-white/5 backdrop-blur-xl p-10 rounded-[2.5rem] border border-white/10 relative group">
+                        <div class="text-blue-400 mb-8 text-5xl font-serif">“</div>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-10 italic">
+                            "Competitive rates and amazing locations. Sorig makes the administrative side of nursing so
+                            simple so I can focus on my patients."
+                        </p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-2xl bg-blue-600/20 border border-blue-400/30 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=200"
+                                    alt="Nurse Elena" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Elena Rodriguez</h4>
+                                <p class="text-blue-400 text-xs font-black uppercase tracking-widest">Pediatric Care</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- News & Insights Section -->
+        <section id="news" class="py-24 px-6 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div class="max-w-2xl">
+                        <div
+                            class="inline-flex items-center gap-2 bg-red-50 text-red-600 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-red-100">
+                            News & Blogs
+                        </div>
+                        <h2 class="text-4xl lg:text-5xl font-bold font-roboto text-blue-950 leading-tight">
+                            Latest News and Blogs
+                        </h2>
+                    </div>
+                    <div class="flex gap-4">
+                        <button
+                            class="news-prev w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button
+                            class="news-next w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Swiper Container -->
+                <div class="swiper news-slider">
+                    <div class="swiper-wrapper" id="blog-container">
+                        <!-- Blogs will be injected here by JavaScript -->
+                    </div>
+                    <div class="swiper-pagination !-bottom-12"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js?v=1.2"></script>
+</body>
+
+</html>
