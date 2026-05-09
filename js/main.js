@@ -6,7 +6,7 @@ async function loadComponent(elementId, componentPath) {
     try {
         const cacheBuster = `?v=${new Date().getTime()}`;
         const response = await fetch(componentPath + cacheBuster);
-        
+
         if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
@@ -20,6 +20,71 @@ async function loadComponent(elementId, componentPath) {
 }
 
 /**
+ * Features that depend on the Navbar being in the DOM
+ */
+function initializeNavbar() {
+    console.log("Navbar initialized. Looking for mobile menu...");
+
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    const closeIcon = document.querySelector('.close-icon');
+
+    // A. Highlight Active Nav Link
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('#navbar-placeholder a');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href) {
+            const cleanHref = href.split('#')[0];
+            const cleanCurrent = currentPath.split('#')[0];
+            if (cleanHref === cleanCurrent || (cleanCurrent === 'index.html' && cleanHref === '')) {
+                link.classList.remove('text-slate-700');
+                link.classList.add('text-blue-600', 'font-bold');
+            }
+        }
+    });
+
+    // B. Mobile Menu Logic
+    if (menuToggle && mobileMenu) {
+        console.log("Mobile menu found! Setting up click listener.");
+        menuToggle.addEventListener('click', (e) => {
+            console.log("Menu button clicked.");
+            e.preventDefault();
+
+            const isClosed = mobileMenu.classList.contains('translate-x-full');
+
+            if (isClosed) {
+                console.log("Action: Opening Menu");
+                mobileMenu.classList.remove('translate-x-full');
+                if (menuIcon) menuIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                console.log("Action: Closing Menu");
+                mobileMenu.classList.add('translate-x-full');
+                if (menuIcon) menuIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close when link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                if (menuIcon) menuIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+    } else {
+        console.warn("Mobile menu elements not found in DOM.");
+    }
+}
+
+/**
  * Main Initialization
  */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -27,7 +92,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
 
-    // 2. Hero Slider Logic
+    // 2. Run Navbar Logic
+    initializeNavbar();
+
+    // 3. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
     if (slides.length > 0) {
@@ -40,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 4000);
     }
 
-    // 3. Smooth Scrolling
+    // 4. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -57,7 +125,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 4. FAQ Accordion
+    // 5. FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
@@ -79,7 +147,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // 5. Tabs
+    // 6. Tabs
     const triggers = document.querySelectorAll('.tab-trigger');
     const panels = document.querySelectorAll('.tab-panel');
     triggers.forEach(t => {
@@ -93,7 +161,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 6. Blog Slider
+    // 7. Blog Slider
     initBlogSlider();
 });
 
