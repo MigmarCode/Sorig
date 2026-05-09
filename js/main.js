@@ -23,64 +23,49 @@ async function loadComponent(elementId, componentPath) {
  * Features that depend on the Navbar being in the DOM
  */
 function initializeNavbar() {
-    console.log("Navbar initialized. Looking for mobile menu...");
+    console.log("Navbar initialized. Setting up mobile logic...");
     
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.querySelector('.menu-icon');
     const closeIcon = document.querySelector('.close-icon');
 
-    // A. Highlight Active Nav Link
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('#navbar-placeholder a');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href) {
-            const cleanHref = href.split('#')[0];
-            const cleanCurrent = currentPath.split('#')[0];
-            if (cleanHref === cleanCurrent || (cleanCurrent === 'index.html' && cleanHref === '')) {
-                link.classList.remove('text-slate-700');
-                link.classList.add('text-blue-600', 'font-bold');
-            }
-        }
-    });
+    // Reset menu state on load
+    if (mobileMenu) {
+        mobileMenu.style.transform = 'translateX(100%)';
+    }
 
     // B. Mobile Menu Logic
     if (menuToggle && mobileMenu) {
-        console.log("Mobile menu found! Setting up click listener.");
         menuToggle.addEventListener('click', (e) => {
-            console.log("Menu button clicked.");
             e.preventDefault();
+            const isHidden = mobileMenu.style.transform === 'translateX(100%)' || mobileMenu.style.transform === '';
             
-            const isClosed = mobileMenu.classList.contains('translate-x-full');
-            
-            if (isClosed) {
-                console.log("Action: Opening Menu");
-                mobileMenu.classList.remove('translate-x-full');
+            if (isHidden) {
+                console.log("Opening Menu");
+                mobileMenu.style.transform = 'translateX(0%)';
                 if (menuIcon) menuIcon.classList.add('hidden');
                 if (closeIcon) closeIcon.classList.remove('hidden');
                 document.body.style.overflow = 'hidden';
             } else {
-                console.log("Action: Closing Menu");
-                mobileMenu.classList.add('translate-x-full');
+                console.log("Closing Menu");
+                mobileMenu.style.transform = 'translateX(100%)';
                 if (menuIcon) menuIcon.classList.remove('hidden');
                 if (closeIcon) closeIcon.classList.add('hidden');
                 document.body.style.overflow = '';
             }
         });
 
-        // Close when link is clicked
+        // Close when link is clicked (Aggressive)
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.style.transform = 'translateX(100%)';
                 if (menuIcon) menuIcon.classList.remove('hidden');
                 if (closeIcon) closeIcon.classList.add('hidden');
                 document.body.style.overflow = '';
             });
         });
-    } else {
-        console.warn("Mobile menu elements not found in DOM.");
     }
 }
 
