@@ -6,7 +6,7 @@ async function loadComponent(elementId, componentPath) {
     try {
         const cacheBuster = `?v=${new Date().getTime()}`;
         const response = await fetch(componentPath + cacheBuster);
-
+        
         if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
@@ -20,67 +20,56 @@ async function loadComponent(elementId, componentPath) {
 }
 
 /**
- * Features that depend on the Navbar being in the DOM
+ * Modular Mobile Menu Logic
  */
-function initializeNavbar() {
-    console.log("Navbar initialized. Looking for mobile menu...");
+async function initializeMobileMenu() {
+    try {
+        // 1. Load the mobile menu component
+        const cacheBuster = `?v=${new Date().getTime()}`;
+        const response = await fetch('./components/mobile-menu.html' + cacheBuster);
+        if (!response.ok) return;
+        const html = await response.text();
+        
+        // 2. Inject it into the body
+        const menuWrapper = document.createElement('div');
+        menuWrapper.id = 'mobile-menu-wrapper';
+        menuWrapper.innerHTML = html;
+        document.body.appendChild(menuWrapper);
 
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.querySelector('.menu-icon');
-    const closeIcon = document.querySelector('.close-icon');
+        // 3. Setup logic
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openBtn = document.getElementById('open-mobile-menu');
+        const closeBtn = document.getElementById('close-mobile-menu');
 
-    // A. Highlight Active Nav Link
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('#navbar-placeholder a');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href) {
-            const cleanHref = href.split('#')[0];
-            const cleanCurrent = currentPath.split('#')[0];
-            if (cleanHref === cleanCurrent || (cleanCurrent === 'index.html' && cleanHref === '')) {
-                link.classList.remove('text-slate-700');
-                link.classList.add('text-blue-600', 'font-bold');
-            }
-        }
-    });
-
-    // B. Mobile Menu Logic
-    if (menuToggle && mobileMenu) {
-        console.log("Mobile menu found! Setting up click listener.");
-        menuToggle.addEventListener('click', (e) => {
-            console.log("Menu button clicked.");
-            e.preventDefault();
-
-            const isClosed = mobileMenu.classList.contains('translate-x-full');
-
-            if (isClosed) {
-                console.log("Action: Opening Menu");
-                mobileMenu.classList.remove('translate-x-full');
-                if (menuIcon) menuIcon.classList.add('hidden');
-                if (closeIcon) closeIcon.classList.remove('hidden');
+        if (openBtn && mobileMenu) {
+            openBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileMenu.style.transform = 'translateX(0%)';
                 document.body.style.overflow = 'hidden';
-            } else {
-                console.log("Action: Closing Menu");
-                mobileMenu.classList.add('translate-x-full');
-                if (menuIcon) menuIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        });
+            });
+        }
 
-        // Close when link is clicked
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
+        if (closeBtn && mobileMenu) {
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.style.transform = 'translateX(100%)';
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close when a link is clicked
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('translate-x-full');
-                if (menuIcon) menuIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
+                mobileMenu.style.transform = 'translateX(100%)';
                 document.body.style.overflow = '';
             });
         });
-    } else {
-        console.warn("Mobile menu elements not found in DOM.");
+
+        // Initialize icons for the new component
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    } catch (error) {
+        console.error('Mobile menu init failed:', error);
     }
 }
 
@@ -92,8 +81,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
 
-    // 2. Run Navbar Logic
-    initializeNavbar();
+    // 2. Initialize Mobile Menu
+    initializeMobileMenu();
 
     // 3. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
