@@ -318,11 +318,8 @@
   .z-50 {
     z-index: 50;
   }
-  .z-\[999\] {
-    z-index: 999;
-  }
-  .z-\[1000\] {
-    z-index: 1000;
+  .z-\[10000\] {
+    z-index: 10000;
   }
   .container {
     width: 100%;
@@ -494,9 +491,6 @@
   }
   .min-h-\[700px\] {
     min-height: 700px;
-  }
-  .min-h-screen {
-    min-height: 100vh;
   }
   .w-1\.5 {
     width: calc(var(--spacing) * 1.5);
@@ -984,9 +978,6 @@
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
-  .pt-6 {
-    padding-top: calc(var(--spacing) * 6);
-  }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
@@ -1087,10 +1078,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .font-extrabold {
-    --tw-font-weight: var(--font-weight-extrabold);
-    font-weight: var(--font-weight-extrabold);
   }
   .font-light {
     --tw-font-weight: var(--font-weight-light);
@@ -1536,11 +1523,6 @@
           --tw-shadow-color: color-mix(in oklab, color-mix(in oklab, var(--color-blue-900) 5%, transparent) var(--tw-shadow-alpha), transparent);
         }
       }
-    }
-  }
-  .active\:text-blue-600 {
-    &:active {
-      color: var(--color-blue-600);
     }
   }
   .sm\:block {
