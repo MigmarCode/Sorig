@@ -20,56 +20,6 @@ async function loadComponent(elementId, componentPath) {
 }
 
 /**
- * Features that depend on the Navbar being in the DOM
- */
-function initializeNavbar() {
-    console.log("Navbar initialized. Setting up mobile logic...");
-    
-    const menuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.querySelector('.menu-icon');
-    const closeIcon = document.querySelector('.close-icon');
-
-    // Reset menu state on load
-    if (mobileMenu) {
-        mobileMenu.style.transform = 'translateX(100%)';
-    }
-
-    // B. Mobile Menu Logic
-    if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isHidden = mobileMenu.style.transform === 'translateX(100%)' || mobileMenu.style.transform === '';
-            
-            if (isHidden) {
-                console.log("Opening Menu");
-                mobileMenu.style.transform = 'translateX(0%)';
-                if (menuIcon) menuIcon.classList.add('hidden');
-                if (closeIcon) closeIcon.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            } else {
-                console.log("Closing Menu");
-                mobileMenu.style.transform = 'translateX(100%)';
-                if (menuIcon) menuIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close when link is clicked (Aggressive)
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.style.transform = 'translateX(100%)';
-                if (menuIcon) menuIcon.classList.remove('hidden');
-                if (closeIcon) closeIcon.classList.add('hidden');
-                document.body.style.overflow = '';
-            });
-        });
-    }
-}
-
-/**
  * Main Initialization
  */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -77,10 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
 
-    // 2. Run Navbar Logic
-    initializeNavbar();
-
-    // 3. Hero Slider Logic
+    // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
     if (slides.length > 0) {
@@ -93,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 4000);
     }
 
-    // 4. Smooth Scrolling
+    // 3. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -110,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 5. FAQ Accordion
+    // 4. FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
@@ -132,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // 6. Tabs
+    // 5. Tabs
     const triggers = document.querySelectorAll('.tab-trigger');
     const panels = document.querySelectorAll('.tab-panel');
     triggers.forEach(t => {
@@ -146,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 7. Blog Slider
+    // 6. Blog Slider
     initBlogSlider();
 });
 
