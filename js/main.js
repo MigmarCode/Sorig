@@ -20,60 +20,6 @@ async function loadComponent(elementId, componentPath) {
 }
 
 /**
- * Modular Mobile Menu Logic
- */
-async function initializeMobileMenu() {
-    try {
-        // 1. Load the mobile menu component
-        const cacheBuster = `?v=${new Date().getTime()}`;
-        const response = await fetch('./components/mobile-menu.html' + cacheBuster);
-        if (!response.ok) return;
-        const html = await response.text();
-        
-        // 2. Inject it into the body
-        const menuWrapper = document.createElement('div');
-        menuWrapper.id = 'mobile-menu-wrapper';
-        menuWrapper.innerHTML = html;
-        document.body.appendChild(menuWrapper);
-
-        // 3. Setup logic
-        const mobileMenu = document.getElementById('mobile-menu');
-        const openBtn = document.getElementById('open-mobile-menu');
-        const closeBtn = document.getElementById('close-mobile-menu');
-
-        if (openBtn && mobileMenu) {
-            openBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                mobileMenu.style.transform = 'translateX(0%)';
-                document.body.style.overflow = 'hidden';
-            });
-        }
-
-        if (closeBtn && mobileMenu) {
-            closeBtn.addEventListener('click', () => {
-                mobileMenu.style.transform = 'translateX(100%)';
-                document.body.style.overflow = '';
-            });
-        }
-
-        // Close when a link is clicked
-        const links = mobileMenu.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.style.transform = 'translateX(100%)';
-                document.body.style.overflow = '';
-            });
-        });
-
-        // Initialize icons for the new component
-        if (typeof lucide !== 'undefined') lucide.createIcons();
-
-    } catch (error) {
-        console.error('Mobile menu init failed:', error);
-    }
-}
-
-/**
  * Main Initialization
  */
 document.addEventListener('DOMContentLoaded', async () => {
@@ -81,10 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
 
-    // 2. Initialize Mobile Menu
-    initializeMobileMenu();
-
-    // 3. Hero Slider Logic
+    // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
     if (slides.length > 0) {
@@ -97,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }, 4000);
     }
 
-    // 4. Smooth Scrolling
+    // 3. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -114,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 5. FAQ Accordion
+    // 4. FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
@@ -136,7 +79,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // 6. Tabs
+    // 5. Tabs
     const triggers = document.querySelectorAll('.tab-trigger');
     const panels = document.querySelectorAll('.tab-panel');
     triggers.forEach(t => {
@@ -150,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     });
 
-    // 7. Blog Slider
+    // 6. Blog Slider
     initBlogSlider();
 });
 
