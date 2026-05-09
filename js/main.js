@@ -21,20 +21,6 @@ async function loadComponent(elementId, componentPath) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Load Components (sequential to ensure DOM is ready)
-    await loadComponent('navbar-placeholder', './components/navbar.html');
-    await loadComponent('footer-placeholder', './components/footer.html');
-
-    // Initialize Navbar Features (Mobile Menu & Active Links)
-    initializeNavbar();
-
-    // 2. Fallback initialization for the whole document
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-});
-
 /**
  * Features that depend on the Navbar being in the DOM
  */
@@ -93,18 +79,27 @@ function initializeNavbar() {
         lucide.createIcons();
     }
 }
-    // 2. Hero Slider Logic
+
+/**
+ * Main Initialization
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Load Components (sequential)
+    await loadComponent('navbar-placeholder', './components/navbar.html');
+    await loadComponent('footer-placeholder', './components/footer.html');
+
+    // 2. Initialize Navbar features
+    initializeNavbar();
+
+    // 3. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
 
     function nextSlide() {
         if (slides.length === 0) return;
-
         slides[currentSlide].classList.remove('opacity-100');
         slides[currentSlide].classList.add('opacity-0');
-
         currentSlide = (currentSlide + 1) % slides.length;
-
         slides[currentSlide].classList.remove('opacity-0');
         slides[currentSlide].classList.add('opacity-100');
     }
@@ -113,75 +108,63 @@ function initializeNavbar() {
         setInterval(nextSlide, 4000);
     }
 
-    // 5. Dynamic Blog Slider
+    // 4. Dynamic Blog Slider
     initBlogSlider();
 
-    // 4. Smooth Scrolling for Anchor Links
+    // 5. Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            if (!targetId) return;
-
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
+            const targetId = href.substring(1);
             const targetElement = document.getElementById(targetId);
+            
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 100, // Offset for fixed navbar
+                    top: targetElement.offsetTop - 100,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 5. FAQ Accordion Logic
+    // 6. FAQ Accordion Logic
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const trigger = item.querySelector('.faq-trigger');
         const content = item.querySelector('.faq-content');
-        const iconContainer = item.querySelector('.w-8.h-8');
 
-        trigger.addEventListener('click', () => {
-            const currentIcon = iconContainer ? iconContainer.querySelector('i, svg') : null;
-            const isOpen = !content.classList.contains('hidden');
+        if (trigger && content) {
+            trigger.addEventListener('click', () => {
+                const isOpen = !content.classList.contains('hidden');
 
-            // Close all other items
-            faqItems.forEach(otherItem => {
-                otherItem.querySelector('.faq-content').classList.add('hidden');
-                const otherIconContainer = otherItem.querySelector('.w-8.h-8');
-                const otherIcon = otherIconContainer ? otherIconContainer.querySelector('i, svg') : null;
-                if (otherIcon) {
-                    otherIcon.style.transform = 'rotate(0deg)';
-                    otherIcon.style.transformOrigin = 'center';
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    const otherContent = otherItem.querySelector('.faq-content');
+                    if (otherContent) otherContent.classList.add('hidden');
+                    const otherIcon = otherItem.querySelector('i[data-lucide="chevron-down"]');
+                    if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                });
+
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    const currentIcon = trigger.querySelector('i[data-lucide="chevron-down"]');
+                    if (currentIcon) currentIcon.style.transform = 'rotate(180deg)';
                 }
-                if (otherIconContainer) {
-                    otherIconContainer.classList.remove('bg-blue-600');
-                    otherIconContainer.classList.add('bg-white');
-                }
-                otherItem.classList.remove('bg-blue-50/50', 'border-blue-100');
             });
-
-            if (!isOpen) {
-                content.classList.remove('hidden');
-                if (currentIcon) {
-                    currentIcon.style.transform = 'rotate(180deg)';
-                    currentIcon.style.transformOrigin = 'center';
-                }
-                if (iconContainer) {
-                    iconContainer.classList.remove('bg-white');
-                    iconContainer.classList.add('bg-blue-600');
-                }
-                item.classList.add('bg-blue-50/50', 'border-blue-100');
-            }
-        });
+        }
     });
 
-    // 6. Vertical Tabs Logic (for Packing Checklist)
+    // 7. Tab Switching Logic (for Resources page)
     const tabTriggers = document.querySelectorAll('.tab-trigger');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
     tabTriggers.forEach(trigger => {
         trigger.addEventListener('click', () => {
             const targetId = trigger.getAttribute('data-tab-target');
+            if (!targetId) return;
 
             // Update Trigger States
             tabTriggers.forEach(btn => {
@@ -192,15 +175,16 @@ function initializeNavbar() {
             trigger.classList.remove('text-slate-500');
 
             // Update Panel Visibility
-            tabPanels.forEach(panel => {
-                panel.classList.add('hidden');
-            });
+            tabPanels.forEach(panel => panel.classList.add('hidden'));
             const activePanel = document.getElementById(targetId);
-            if (activePanel) {
-                activePanel.classList.remove('hidden');
-            }
+            if (activePanel) activePanel.classList.remove('hidden');
         });
     });
+
+    // 8. Global Icon Refresh
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });
 
 /**
@@ -242,38 +226,22 @@ async function initBlogSlider() {
             </div>
         `).join('');
 
-        // Re-initialize icons for the newly added cards
         if (typeof lucide !== 'undefined') {
             lucide.createIcons();
         }
 
-        // Initialize Swiper
         new Swiper('.news-slider', {
             slidesPerView: 1,
             spaceBetween: 30,
             loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.news-next',
-                prevEl: '.news-prev',
-            },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.news-next', prevEl: '.news-prev' },
             breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
             },
         });
-
     } catch (error) {
         console.error('Error loading blog posts:', error);
     }
