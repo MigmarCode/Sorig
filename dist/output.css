@@ -41,7 +41,6 @@
     --font-weight-light: 300;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-weight-extrabold: 800;
     --font-weight-black: 900;
     --tracking-widest: 0.1em;
     --leading-tight: 1.25;
@@ -315,11 +314,11 @@
   .z-20 {
     z-index: 20;
   }
-  .z-50 {
-    z-index: 50;
-  }
   .z-\[10000\] {
     z-index: 10000;
+  }
+  .z-\[10001\] {
+    z-index: 10001;
   }
   .container {
     width: 100%;
