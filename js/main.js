@@ -4,17 +4,18 @@
  */
 async function loadComponent(elementId, componentPath) {
     try {
-        const response = await fetch(componentPath);
+        // Add a timestamp to the URL to prevent browser caching
+        const cacheBuster = `?v=${new Date().getTime()}`;
+        const response = await fetch(componentPath + cacheBuster);
+        
         if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
 
-        // Initialize icons for this component immediately with a small delay for DOM stability
-        setTimeout(() => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }, 100);
+        // Initialize icons for this component
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
     } catch (error) {
         console.error('Error loading component:', error);
     }
@@ -25,16 +26,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
 
-    // 2. Highlight Active Nav Link
+    // Initialize Navbar Features (Mobile Menu & Active Links)
+    initializeNavbar();
+
+    // 2. Fallback initialization for the whole document
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+});
+
+/**
+ * Features that depend on the Navbar being in the DOM
+ */
+function initializeNavbar() {
+    // A. Highlight Active Nav Link
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('#navbar-placeholder a');
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href) {
-            // Clean up href for comparison (remove # or extra paths)
             const cleanHref = href.split('#')[0];
             const cleanCurrent = currentPath.split('#')[0];
-
             if (cleanHref === cleanCurrent || (cleanCurrent === 'index.html' && cleanHref === '')) {
                 link.classList.remove('text-slate-700');
                 link.classList.add('text-blue-600', 'font-bold');
@@ -42,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     });
 
-    // 3. Mobile Menu Toggle Logic
+    // B. Mobile Menu Toggle Logic
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const menuIcon = document.querySelector('.menu-icon');
@@ -53,13 +65,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const isOpen = !mobileMenu.classList.contains('translate-x-full');
             if (isOpen) {
                 mobileMenu.classList.add('translate-x-full');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
+                if (menuIcon) menuIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
                 document.body.classList.remove('overflow-hidden');
             } else {
                 mobileMenu.classList.remove('translate-x-full');
-                menuIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
+                if (menuIcon) menuIcon.classList.add('hidden');
+                if (closeIcon) closeIcon.classList.remove('hidden');
                 document.body.classList.add('overflow-hidden');
             }
         });
@@ -69,18 +81,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('translate-x-full');
-                menuIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
+                if (menuIcon) menuIcon.classList.remove('hidden');
+                if (closeIcon) closeIcon.classList.add('hidden');
                 document.body.classList.remove('overflow-hidden');
             });
         });
     }
 
-    // 4. Fallback initialization for the whole document
+    // C. Refresh icons inside the navbar
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
-
+}
     // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
     let currentSlide = 0;
