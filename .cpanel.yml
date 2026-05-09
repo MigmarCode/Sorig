@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/MigmarCode/public_html/
+    - export DEPLOYPATH=/home/sorigca/public_html/
     - /bin/cp -R * $DEPLOYPATH
