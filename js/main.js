@@ -25,10 +25,8 @@ async function loadComponent(elementId, componentPath) {
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Load Navbar and Footer
     await loadComponent('navbar-placeholder', './components/navbar.html');
-    await loadComponent('footer-placeholder', './components/footer.html');
-
-    // Initialize Mobile Menu
     initMobileMenu();
+    await loadComponent('footer-placeholder', './components/footer.html');
 
     // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
