@@ -6,7 +6,7 @@ async function loadComponent(elementId, componentPath) {
     try {
         const cacheBuster = `?v=${new Date().getTime()}`;
         const response = await fetch(componentPath + cacheBuster);
-        
+
         if (!response.ok) throw new Error(`Failed to load ${componentPath}`);
         const html = await response.text();
         document.getElementById(elementId).innerHTML = html;
@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 1. Load Navbar and Footer
     await loadComponent('navbar-placeholder', './components/navbar.html');
     await loadComponent('footer-placeholder', './components/footer.html');
+
+    // Initialize Mobile Menu
+    initMobileMenu();
 
     // 2. Hero Slider Logic
     const slides = document.querySelectorAll('.hero-slide');
@@ -130,3 +133,53 @@ async function initBlogSlider() {
         if (typeof lucide !== 'undefined') lucide.createIcons();
     } catch (e) { console.error(e); }
 }
+
+/**
+ * Mobile Menu Toggle and Animation Handler (Slide-in Drawer)
+ */
+function initMobileMenu() {
+    const menuBtn = document.getElementById('mobile-menu-button');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (!menuBtn || !mobileMenu || !overlay) return;
+
+    function openMenu() {
+        // Show backdrop overlay
+        overlay.classList.remove('opacity-0', 'pointer-events-none', 'invisible');
+        overlay.classList.add('opacity-100', 'pointer-events-auto', 'visible');
+        
+        // Slide in drawer
+        mobileMenu.classList.remove('translate-x-full', 'pointer-events-none', 'invisible');
+        mobileMenu.classList.add('translate-x-0', 'pointer-events-auto', 'visible');
+        
+        // Prevent body scrolling
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        // Hide backdrop overlay
+        overlay.classList.remove('opacity-100', 'pointer-events-auto', 'visible');
+        overlay.classList.add('opacity-0', 'pointer-events-none', 'invisible');
+        
+        // Slide out drawer
+        mobileMenu.classList.remove('translate-x-0', 'pointer-events-auto', 'visible');
+        mobileMenu.classList.add('translate-x-full', 'pointer-events-none', 'invisible');
+        
+        // Restore body scrolling
+        document.body.style.overflow = '';
+    }
+
+    menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when a link inside the mobile menu is clicked
+    const links = mobileMenu.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+}
+
+
