@@ -12,6 +12,20 @@
     --color-black: #000000;
     --color-red: #981616;
 
+    /* Red Palette (for errors & validation) */
+    --color-red-50: #fef2f2;
+    --color-red-100: #fee2e2;
+    --color-red-200: #fecaca;
+    --color-red-500: #ef4444;
+    --color-red-600: #dc2626;
+    --color-red-700: #b91c1c;
+
+    /* Green Palette (for success states) */
+    --color-green-50: #f0fdf4;
+    --color-green-100: #dcfce7;
+    --color-green-500: #22c55e;
+    --color-green-600: #16a34a;
+
     /* Brand Blue Palette (based on #134578) */
     --color-blue-50: #f0f4f8;
     --color-blue-100: #dce6ef;
