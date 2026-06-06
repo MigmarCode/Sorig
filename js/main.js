@@ -188,6 +188,14 @@ function highlightActiveNav() {
     const path = window.location.pathname;
     const page = path.split("/").pop() || "index.html";
 
+    // Hide Join Us button if we are on join.html
+    if (page === "join.html") {
+        const joinDesktop = document.getElementById('nav-join-desktop');
+        const joinMobile = document.getElementById('nav-join-mobile');
+        if (joinDesktop) joinDesktop.style.display = 'none';
+        if (joinMobile) joinMobile.style.display = 'none';
+    }
+
     // Select all links in desktop and mobile menu
     const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
     navLinks.forEach(link => {
