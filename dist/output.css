@@ -1896,6 +1896,10 @@ main {
 .btn-join-hover:hover {
   background-color: #9d0208 !important;
 }
+.nav-active {
+  color: #9d0208 !important;
+  font-weight: 700 !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 1. Load Navbar and Footer
     await loadComponent('navbar-placeholder', './components/navbar.html');
     initMobileMenu();
+    highlightActiveNav();
     await loadComponent('footer-placeholder', './components/footer.html');
 
     // 2. Hero Slider Logic
@@ -177,6 +178,31 @@ function initMobileMenu() {
     const links = mobileMenu.querySelectorAll('a');
     links.forEach(link => {
         link.addEventListener('click', closeMenu);
+    });
+}
+
+/**
+ * Highlights the active page link in the navigation menu
+ */
+function highlightActiveNav() {
+    const path = window.location.pathname;
+    const page = path.split("/").pop() || "index.html";
+
+    // Select all links in desktop and mobile menu
+    const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Match base filename (e.g. index.html)
+        const linkPage = href.split('/').pop().split('#')[0];
+
+        // Normalize homepage matches
+        const isHome = (page === "index.html" || page === "") && (linkPage === "index.html" || linkPage === "");
+
+        if (linkPage === page || isHome) {
+            link.classList.add('nav-active');
+        }
     });
 }
 

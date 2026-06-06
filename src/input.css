@@ -111,3 +111,9 @@ main {
 .btn-join-hover:hover {
     background-color: #9d0208 !important;
 }
+
+/* Active Nav Link Style */
+.nav-active {
+    color: #9d0208 !important;
+    font-weight: 700 !important;
+}
