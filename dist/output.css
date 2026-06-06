@@ -984,9 +984,6 @@
   .object-center {
     object-position: center;
   }
-  .object-top {
-    object-position: top;
-  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1879,6 +1876,19 @@
 }
 .swiper-slide {
   height: auto !important;
+}
+nav.fixed {
+  background-color: var(--color-white) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+main {
+  margin-top: 112px;
+}
+@media (min-width: 768px) {
+  main {
+    margin-top: 128px;
+  }
 }
 @property --tw-translate-x {
   syntax: "*";

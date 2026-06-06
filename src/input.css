@@ -86,3 +86,20 @@
 .swiper-slide {
     height: auto !important;
 }
+
+/* Remove glass effect on the navigation bar */
+nav.fixed {
+    background-color: var(--color-white) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Push main content below the fixed navbar */
+main {
+    margin-top: 112px;
+}
+@media (min-width: 768px) {
+    main {
+        margin-top: 128px;
+    }
+}
