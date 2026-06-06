@@ -1890,6 +1890,12 @@ main {
     margin-top: 128px;
   }
 }
+.btn-join-hover {
+  transition: all 0.3s ease !important;
+}
+.btn-join-hover:hover {
+  background-color: #9d0208 !important;
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;

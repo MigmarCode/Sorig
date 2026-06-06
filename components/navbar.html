@@ -17,43 +17,55 @@
         <!-- Join Us Button (Desktop) -->
         <div class="hidden sm:block">
             <a href="join.html"
-                class="bg-blue-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-800 transition shadow-lg shadow-blue-900/10">
+                class="bg-blue-900 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-800 btn-join-hover transition shadow-lg shadow-blue-900/10">
                 Join Us
             </a>
         </div>
         <!-- Mobile Menu Toggle Button (Hamburger) -->
-        <button id="mobile-menu-button" class="md:hidden flex items-center justify-center p-2 rounded-xl hover:bg-slate-100 transition text-slate-700 focus:outline-none" aria-label="Toggle Menu">
+        <button id="mobile-menu-button"
+            class="md:hidden flex items-center justify-center p-2 rounded-xl hover:bg-slate-100 transition text-slate-700 focus:outline-none"
+            aria-label="Toggle Menu">
             <i data-lucide="menu" class="w-7 h-7"></i>
         </button>
     </div>
 </nav>
 
 <!-- Mobile Menu Backdrop Overlay -->
-<div id="mobile-menu-overlay" class="md:hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none invisible" style="z-index: 60;"></div>
+<div id="mobile-menu-overlay"
+    class="md:hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 opacity-0 pointer-events-none invisible"
+    style="z-index: 60;"></div>
 
 <!-- Mobile Menu Sidebar Drawer -->
-<div id="mobile-menu" class="md:hidden fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 ease-in-out translate-x-full flex flex-col p-6 pointer-events-none invisible" style="z-index: 70;">
+<div id="mobile-menu"
+    class="md:hidden fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transition-transform duration-300 ease-in-out translate-x-full flex flex-col p-6 pointer-events-none invisible"
+    style="z-index: 70;">
     <!-- Drawer Header -->
     <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-100">
         <a href="index.html">
             <img src="./img/logos/Sorig-03.svg" alt="Sorig Logo" class="h-16 w-auto">
         </a>
-        <button id="mobile-menu-close" class="flex items-center justify-center p-2 rounded-xl hover:bg-slate-100 transition text-slate-700 focus:outline-none" aria-label="Close Menu">
+        <button id="mobile-menu-close"
+            class="flex items-center justify-center p-2 rounded-xl hover:bg-slate-100 transition text-slate-700 focus:outline-none"
+            aria-label="Close Menu">
             <i data-lucide="x" class="w-7 h-7"></i>
         </button>
     </div>
 
     <!-- Drawer Links -->
     <div class="flex flex-col space-y-5 text-xl flex-grow">
-        <a href="index.html#" class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">Home</a>
-        <a href="about.html" class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">About Us</a>
-        <a href="resources.html" class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">Resources</a>
+        <a href="index.html#"
+            class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">Home</a>
+        <a href="about.html"
+            class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">About
+            Us</a>
+        <a href="resources.html"
+            class="text-slate-700 hover:text-blue-900 transition-all duration-200 py-2 border-b border-slate-50 font-medium">Resources</a>
     </div>
 
     <!-- Join Us (Mobile) -->
     <div class="pt-6 sm:hidden border-t border-slate-100">
         <a href="join.html"
-            class="block text-center bg-blue-900 text-white px-6 py-3.5 rounded-2xl font-semibold hover:bg-blue-800 transition shadow-lg shadow-blue-900/10">
+            class="block text-center bg-blue-900 text-white px-6 py-3.5 rounded-2xl font-semibold hover:bg-blue-800 btn-join-hover transition shadow-lg shadow-blue-900/10">
             Join Us
         </a>
     </div>
