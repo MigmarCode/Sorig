@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/sorigca/public_html/
+    - shopt -s dotglob
     - /bin/cp -R * $DEPLOYPATH
