@@ -13,6 +13,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="bg-slate-50 text-slate-900 font-nunito">
@@ -103,11 +104,12 @@
 
                         <!-- Footer Detail inside Card -->
                         <div class="mt-12 pt-8 border-t border-white/10">
-                            <p class="text-blue-200 text-sm mb-2">Prefer to email us directly?</p>
-                            <a href="mailto:enquiry@sorig.ca"
-                                class="text-white hover:text-blue-300 text-lg font-bold flex items-center gap-2 transition-all">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
-                                enquiry@sorig.ca
+                            <p class="text-blue-200 text-sm mb-2">Prefer to contact us via whatsapp or call us at:
+                            </p>
+                            <a href="https://wa.me/1XXXXXXXXXX" target="_blank" rel="noopener noreferrer"
+                                class="text-white hover:text-green-300 text-lg font-bold flex items-center gap-2 transition-all">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                WhatsApp / Call Us
                             </a>
                         </div>
                     </div>
@@ -154,7 +156,7 @@
                                             class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
                                             <i data-lucide="user" class="w-5 h-5"></i>
                                         </span>
-                                        <input type="text" id="name" name="name" required placeholder="Jane Doe"
+                                        <input type="text" id="name" name="name" required placeholder="Full Name"
                                             class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm">
                                     </div>
                                 </div>
@@ -168,58 +170,18 @@
                                             class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
                                             <i data-lucide="mail" class="w-5 h-5"></i>
                                         </span>
-                                        <input type="email" id="email" name="email" required
-                                            placeholder="jane.doe@example.com"
+                                        <input type="email" id="email" name="email" required placeholder="Your Email"
                                             class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <!-- Phone -->
-                                <div class="flex flex-col">
-                                    <label for="phone" class="text-slate-700 font-bold text-sm mb-2 ml-1">Phone
-                                        Number</label>
-                                    <div class="relative">
-                                        <span
-                                            class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
-                                            <i data-lucide="phone" class="w-5 h-5"></i>
-                                        </span>
-                                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000"
-                                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm">
-                                    </div>
-                                </div>
 
-                                <!-- Specialization -->
-                                <div class="flex flex-col">
-                                    <label for="specialization"
-                                        class="text-slate-700 font-bold text-sm mb-2 ml-1">Specialization *</label>
-                                    <div class="relative">
-                                        <span
-                                            class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
-                                            <i data-lucide="stethoscope" class="w-5 h-5"></i>
-                                        </span>
-                                        <select id="specialization" name="specialization" required
-                                            class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm appearance-none cursor-pointer">
-                                            <option value="" disabled selected>Select specialization...</option>
-                                            <option value="Registered Nurse (RN)">Registered Nurse (RN)</option>
-                                            <option value="Licensed Practical Nurse (LPN)">Licensed Practical Nurse
-                                                (LPN)</option>
-                                            <option value="Nurse Practitioner (NP)">Nurse Practitioner (NP)</option>
-                                            <option value="Travel Nurse">Travel Nurse</option>
-                                            <option value="Other / Allied Health">Other / Allied Health</option>
-                                        </select>
-                                        <span
-                                            class="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 pointer-events-none">
-                                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
 
                             <!-- Resume / CV Upload -->
                             <div class="flex flex-col">
-                                <label class="text-slate-700 font-bold text-sm mb-2 ml-1">Upload CV / Resume *</label>
+                                <label class="text-slate-700 font-bold text-sm mb-2 ml-1">Upload your CV / Resume
+                                    *</label>
                                 <div id="drop-zone"
                                     class="border-2 border-dashed border-slate-200 hover:border-blue-500 rounded-3xl p-8 flex flex-col items-center justify-center transition-all bg-slate-50/50 cursor-pointer relative">
                                     <input type="file" id="attachment" name="attachment" required
@@ -256,8 +218,8 @@
 
                             <!-- Additional Message -->
                             <div class="flex flex-col">
-                                <label for="message" class="text-slate-700 font-bold text-sm mb-2 ml-1">Additional
-                                    Message / Note</label>
+                                <label for="message" class="text-slate-700 font-bold text-sm mb-2 ml-1">Leave a message
+                                    / note (Optional)</label>
                                 <textarea id="message" name="message" rows="4"
                                     placeholder="Tell us about yourself, availability, or clinical interests..."
                                     class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm resize-none"></textarea>
