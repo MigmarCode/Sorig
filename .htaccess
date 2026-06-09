@@ -4,3 +4,24 @@
     Header set Pragma "no-cache"
     Header set Expires 0
 </FilesMatch>
+
+RewriteEngine On
+
+# --- EXTERNAL REDIRECTS (Forces the browser to show the clean URL) ---
+# 1. Redirect /index.html to /home
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ /home [R=301,L]
+
+# 2. Redirect other .html pages to remove the .html extension
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
+
+# --- INTERNAL ROUTING (Tells the server which file to actually load) ---
+# 3. Serve index.html when someone visits /home
+RewriteRule ^home/?$ index.html [L]
+
+# 4. Serve the corresponding .html file for other clean URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
