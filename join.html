@@ -29,14 +29,17 @@
                 <div
                     class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] mb-6 border border-blue-100">
                     <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
-                    Careers
+                    Contact Us
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold font-roboto text-blue-950 mb-6 leading-tight">
-                    Join the Sorig Family
+                <h1 class="text-4xl md:text-5xl font-bold font-roboto text-blue-950 mb-0 leading-tight">
+                    Get in Touch
                 </h1>
-                <p class="text-lg text-slate-500 leading-relaxed">
-                    Step into your next adventure. Submit your details and resume below, and our recruitment team will
-                    get in touch with you.
+                <p class="text-2xl text-slate-500 leading-relaxed">
+                    Have questions, feedback, or need support?
+                </p>
+                <p class="text-base text-slate-500 leading-relaxed">
+                    We'd love to hear from you. Reach out to our team,
+                    and we'll get back to you as soon as possible.
                 </p>
             </div>
 
@@ -126,10 +129,11 @@
                                 class="w-24 h-24 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-8 border border-green-100 animate-bounce mx-auto">
                                 <i data-lucide="check" class="w-12 h-12"></i>
                             </div>
-                            <h2 class="text-3xl font-bold font-roboto text-blue-950 mb-4">Application Submitted!</h2>
+                            <h2 class="text-3xl font-bold font-roboto text-blue-950 mb-4">Thanks for contacting Sorig!
+                            </h2>
                             <p class="text-slate-500 max-w-md mx-auto mb-8 leading-relaxed">
-                                Thank you for applying to join Sorig. A confirmation request has been sent to the
-                                administration. We will review your application and get in touch with you shortly.
+                                Your message has been received, and a confirmation has been sent to our team. We'll be
+                                in touch with you soon.
                             </p>
                             <a href="index.html"
                                 class="bg-blue-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-800 transition shadow-lg shadow-blue-900/10">
@@ -139,10 +143,10 @@
 
                         <!-- Form View -->
                         <form id="join-form" action="https://formsubmit.co/ajax/enquiry@sorig.ca" method="POST"
-                            enctype="multipart/form-data" class="space-y-8">
+                            class="space-y-8">
                             <!-- Anti-spam & Redirect Configuration for FormSubmit -->
                             <input type="text" name="_honey" style="display:none">
-                            <input type="hidden" name="_subject" value="New Nurse Candidate Application - Sorig">
+                            <input type="hidden" name="_subject" value="New Contact Message - Sorig">
                             <!-- Enable template -->
                             <input type="hidden" name="_template" value="box">
 
@@ -176,52 +180,25 @@
                                 </div>
                             </div>
 
-
-
-                            <!-- Resume / CV Upload -->
+                            <!-- Phone Number -->
                             <div class="flex flex-col">
-                                <label class="text-slate-700 font-bold text-sm mb-2 ml-1">Upload your CV / Resume
-                                    *</label>
-                                <div id="drop-zone"
-                                    class="border-2 border-dashed border-slate-200 hover:border-blue-500 rounded-3xl p-8 flex flex-col items-center justify-center transition-all bg-slate-50/50 cursor-pointer relative">
-                                    <input type="file" id="attachment" name="attachment" required
-                                        accept=".pdf,.doc,.docx"
-                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
-                                    <div id="upload-prompt" class="text-center flex flex-col items-center">
-                                        <div
-                                            class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-4">
-                                            <i data-lucide="upload-cloud" class="w-7 h-7"></i>
-                                        </div>
-                                        <p class="text-slate-700 font-bold mb-1">Drag and drop your CV here</p>
-                                        <p class="text-slate-400 text-xs">Or click to browse from your device (PDF, DOC,
-                                            DOCX up to 10MB)</p>
-                                    </div>
-                                    <!-- File info: use inline style for display toggle to avoid Tailwind hidden/flex conflict -->
-                                    <div id="file-info" style="display:none;"
-                                        class="text-center flex flex-col items-center">
-                                        <div
-                                            class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-4 border border-green-100">
-                                            <i data-lucide="file-text" class="w-7 h-7"></i>
-                                        </div>
-                                        <p id="file-name" class="text-slate-700 font-bold mb-1 max-w-[250px] truncate">
-                                            resume.pdf</p>
-                                        <p id="file-size" class="text-slate-400 text-xs mb-3">1.2 MB</p>
-                                        <button type="button" id="remove-file"
-                                            class="text-red-600 hover:text-red-500 text-sm font-bold flex items-center gap-1 transition">
-                                            <i data-lucide="trash-2" class="w-4 h-4"></i> Remove file
-                                        </button>
-                                    </div>
+                                <label for="phone" class="text-slate-700 font-bold text-sm mb-2 ml-1">Phone Number
+                                    <span class="text-slate-400 font-normal">(Optional)</span></label>
+                                <div class="relative">
+                                    <span
+                                        class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 pointer-events-none">
+                                        <i data-lucide="phone" class="w-5 h-5"></i>
+                                    </span>
+                                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number"
+                                        class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 pl-12 pr-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm">
                                 </div>
-                                <span id="file-error" class="text-red-600 text-xs font-bold mt-2 ml-1 hidden">Please
-                                    upload a valid file.</span>
                             </div>
 
-                            <!-- Additional Message -->
+                            <!-- Message -->
                             <div class="flex flex-col">
-                                <label for="message" class="text-slate-700 font-bold text-sm mb-2 ml-1">Leave a message
-                                    / note (Optional)</label>
-                                <textarea id="message" name="message" rows="4"
-                                    placeholder="Tell us about yourself, availability, or clinical interests..."
+                                <label for="message" class="text-slate-700 font-bold text-sm mb-2 ml-1">Message
+                                    <span class="text-slate-400 font-normal">(Optional)</span></label>
+                                <textarea id="message" name="message" rows="4" placeholder="Enter your message..."
                                     class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-4 px-4 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all text-sm resize-none"></textarea>
                             </div>
 
@@ -236,7 +213,7 @@
                             <!-- Submit Button: use py-[18px] — py-4.5 is not a valid Tailwind class -->
                             <button type="submit" id="submit-btn"
                                 class="w-full bg-blue-900 text-white py-[18px] rounded-2xl font-bold hover:bg-blue-800 btn-join-hover flex items-center justify-center gap-3 shadow-lg shadow-blue-900/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
-                                <span id="btn-text">Submit Application</span>
+                                <span id="btn-text">Send Message</span>
                                 <div id="btn-spinner"
                                     class="hidden w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin">
                                 </div>
@@ -254,18 +231,9 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js?v=2.1"></script>
 
-    <!-- Custom Page Script for File Upload and Submissions -->
+    <!-- Contact Form Submission Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const dropZone = document.getElementById('drop-zone');
-            const fileInput = document.getElementById('attachment');
-            const uploadPrompt = document.getElementById('upload-prompt');
-            const fileInfo = document.getElementById('file-info');
-            const fileNameEl = document.getElementById('file-name');
-            const fileSizeEl = document.getElementById('file-size');
-            const removeFileBtn = document.getElementById('remove-file');
-            const fileError = document.getElementById('file-error');
-
             const joinForm = document.getElementById('join-form');
             const submitBtn = document.getElementById('submit-btn');
             const btnText = document.getElementById('btn-text');
@@ -274,108 +242,17 @@
             const errorMessageText = document.getElementById('error-message-text');
             const successContainer = document.getElementById('form-success-container');
 
-            // Track the dropped file separately (FileList is read-only)
-            let droppedFile = null;
-
-            // Drag and drop highlight events
-            ['dragenter', 'dragover'].forEach(eventName => {
-                dropZone.addEventListener(eventName, (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropZone.classList.add('border-blue-500', 'bg-blue-50');
-                }, false);
-            });
-
-            ['dragleave', 'drop'].forEach(eventName => {
-                dropZone.addEventListener(eventName, (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropZone.classList.remove('border-blue-500', 'bg-blue-50');
-                }, false);
-            });
-
-            // Drop handler — store file separately since FileList is read-only
-            dropZone.addEventListener('drop', (e) => {
-                const files = e.dataTransfer.files;
-                if (files.length > 0) {
-                    droppedFile = files[0];
-                    validateAndDisplayFile(droppedFile);
-                }
-            });
-
-            // Native file picker change
-            fileInput.addEventListener('change', () => {
-                if (fileInput.files.length > 0) {
-                    droppedFile = null; // use native input
-                    validateAndDisplayFile(fileInput.files[0]);
-                }
-            });
-
-            removeFileBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                fileInput.value = '';
-                droppedFile = null;
-                fileInfo.style.display = 'none';
-                uploadPrompt.style.display = '';
-                fileError.classList.add('hidden');
-            });
-
-            function validateAndDisplayFile(file) {
-                const allowedExtensions = ['.pdf', '.doc', '.docx'];
-                const fileExt = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
-                const maxSize = 10 * 1024 * 1024; // 10MB
-
-                if (!allowedExtensions.includes(fileExt)) {
-                    showFileError('Invalid file type. Only PDF, DOC, and DOCX are allowed.');
-                    fileInput.value = '';
-                    droppedFile = null;
-                    return;
-                }
-
-                if (file.size > maxSize) {
-                    showFileError('File size exceeds the 10MB limit.');
-                    fileInput.value = '';
-                    droppedFile = null;
-                    return;
-                }
-
-                fileError.classList.add('hidden');
-                uploadPrompt.style.display = 'none';
-                fileInfo.style.display = 'flex';
-                fileNameEl.textContent = file.name;
-                fileSizeEl.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
-            }
-
-            function showFileError(msg) {
-                fileError.textContent = msg;
-                fileError.classList.remove('hidden');
-                fileInfo.style.display = 'none';
-                uploadPrompt.style.display = '';
-            }
-
             // AJAX Submission Handler
             joinForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                // Determine which file source to use
-                const activeFile = droppedFile || (fileInput.files.length ? fileInput.files[0] : null);
-                if (!activeFile) {
-                    showFileError('Please upload your CV / Resume.');
-                    return;
-                }
-
                 // UI Loading State
                 submitBtn.disabled = true;
-                btnText.textContent = 'Submitting...';
+                btnText.textContent = 'Sending...';
                 btnSpinner.classList.remove('hidden');
                 errorBanner.classList.add('hidden');
 
-                // Build FormData manually so drag-dropped files are included
                 const formData = new FormData(joinForm);
-                if (droppedFile) {
-                    formData.set('attachment', droppedFile, droppedFile.name);
-                }
 
                 try {
                     const response = await fetch(joinForm.action, {
@@ -386,15 +263,16 @@
                         }
                     });
 
-                    const data = await response.json();
-
-                    // FormSubmit returns { success: true } (boolean), not "true" (string)
-                    if (response.ok && (data.success === true || data.success === 'true')) {
+                    // Show success to the user whenever FormSubmit accepts the request (HTTP 200).
+                    // This includes the first-time activation flow — users should never see
+                    // FormSubmit's internal activation message.
+                    if (response.ok) {
                         joinForm.style.display = 'none';
                         successContainer.classList.remove('hidden');
                         if (typeof lucide !== 'undefined') lucide.createIcons();
                         window.scrollTo({ top: successContainer.offsetTop - 150, behavior: 'smooth' });
                     } else {
+                        const data = await response.json().catch(() => ({}));
                         throw new Error(data.message || 'Submission failed. Please try again later.');
                     }
                 } catch (error) {
@@ -404,7 +282,7 @@
 
                     // Reset Button
                     submitBtn.disabled = false;
-                    btnText.textContent = 'Submit Application';
+                    btnText.textContent = 'Send Message';
                     btnSpinner.classList.add('hidden');
                 }
             });
