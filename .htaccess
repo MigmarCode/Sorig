@@ -13,6 +13,8 @@ RewriteCond %{THE_REQUEST} /index\.html [NC]
 RewriteRule ^index\.html$ /home [R=301,L]
 
 # 2. Redirect other .html pages to remove the .html extension
+# (We exclude /components/ because they are fetched by Javascript)
+RewriteCond %{REQUEST_URI} !^/components/ [NC]
 RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
 RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
 
@@ -23,5 +25,5 @@ RewriteRule ^home/?$ index.html [L]
 # 4. Serve the corresponding .html file for other clean URLs
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-RewriteRule ^(.+?)/?$ $1.html [L]
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]

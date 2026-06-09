@@ -186,10 +186,10 @@ function initMobileMenu() {
  */
 function highlightActiveNav() {
     const path = window.location.pathname;
-    const page = path.split("/").pop() || "index.html";
+    const page = path.split("/").pop() || "home";
 
-    // Hide Join Us button if we are on join.html
-    if (page === "join.html") {
+    // Hide Join Us button if we are on contact page
+    if (page === "contact" || page === "join.html") {
         const joinDesktop = document.getElementById('nav-join-desktop');
         const joinMobile = document.getElementById('nav-join-mobile');
         if (joinDesktop) joinDesktop.style.display = 'none';
@@ -206,7 +206,7 @@ function highlightActiveNav() {
         const linkPage = href.split('/').pop().split('#')[0];
 
         // Normalize homepage matches
-        const isHome = (page === "index.html" || page === "") && (linkPage === "index.html" || linkPage === "");
+        const isHome = (page === "index.html" || page === "home" || page === "") && (linkPage === "index.html" || linkPage === "home" || linkPage === "");
 
         if (linkPage === page || isHome) {
             link.classList.add('nav-active');
